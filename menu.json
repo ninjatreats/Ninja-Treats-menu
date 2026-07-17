@@ -1,0 +1,327 @@
+{
+  "config": {
+    "phone": "917388249369",
+    "upiId": "9451386375@ybl",
+    "payeeName": "Ninja Treats",
+    "freeDeliveryThreshold": 149,
+    "deliveryChargeEnabled": false,
+    "deliveryCharge": 29
+  },
+  "categories": [
+    {
+      "key": "best",
+      "title": "Best Sellers",
+      "icon": "\u2b50",
+      "colorClass": "gold",
+      "items": [
+        {
+          "id": "bs1",
+          "name": "Masala Aloo Stuffed Sandwich (4 pcs)",
+          "desc": "Crispy, spicy & tasty",
+          "price": 119,
+          "variants": [
+            {
+              "id": "butter",
+              "label": "Butter",
+              "priceDelta": 0
+            },
+            {
+              "id": "ghee",
+              "label": "Desi Ghee",
+              "priceDelta": 20
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": "bs2",
+          "name": "Paneer Paratha (1 pc)",
+          "desc": "Freshly grated paneer stuffed paratha",
+          "price": 99,
+          "variants": [
+            {
+              "id": "oil",
+              "label": "Refined Oil",
+              "priceDelta": 0
+            },
+            {
+              "id": "butter",
+              "label": "Butter",
+              "priceDelta": 20
+            },
+            {
+              "id": "ghee",
+              "label": "Desi Ghee",
+              "priceDelta": 30
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": "bs3",
+          "name": "Aloo Paratha (1 pc)",
+          "desc": "Spiced aloo stuffed paratha",
+          "price": 59,
+          "variants": [
+            {
+              "id": "oil",
+              "label": "Refined Oil",
+              "priceDelta": 0
+            },
+            {
+              "id": "butter",
+              "label": "Butter",
+              "priceDelta": 20
+            },
+            {
+              "id": "ghee",
+              "label": "Desi Ghee",
+              "priceDelta": 30
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": "bs4",
+          "name": "Sattu Paratha (1 pc)",
+          "desc": "High-protein roasted chana sattu stuffed paratha",
+          "price": 79,
+          "variants": [
+            {
+              "id": "oil",
+              "label": "Refined Oil",
+              "priceDelta": 0
+            },
+            {
+              "id": "butter",
+              "label": "Butter",
+              "priceDelta": 20
+            },
+            {
+              "id": "ghee",
+              "label": "Desi Ghee",
+              "priceDelta": 30
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": "bs5",
+          "name": "White Sauce Pasta",
+          "desc": "Creamy, cheesy & delicious",
+          "price": 179,
+          "available": true
+        },
+        {
+          "id": "bs6",
+          "name": "Masala Macaroni",
+          "desc": "Spicy Indian style",
+          "price": 139,
+          "available": true
+        },
+        {
+          "id": "bs7",
+          "name": "Poori Sabji (4 pcs)",
+          "desc": "Fluffy pooris with your choice of sabji",
+          "price": 129,
+          "variants": [
+            {
+              "id": "dry",
+              "label": "Dry Aloo Jeera",
+              "priceDelta": 0
+            },
+            {
+              "id": "gravy",
+              "label": "Gravy Aloo Tamatar",
+              "priceDelta": 49
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": "bs8",
+          "name": "Roti (1 pc)",
+          "desc": "Soft tandoori roti",
+          "price": 15,
+          "variants": [
+            {
+              "id": "plain",
+              "label": "Plain",
+              "priceDelta": 0
+            },
+            {
+              "id": "butter",
+              "label": "Butter",
+              "priceDelta": 5
+            },
+            {
+              "id": "ghee",
+              "label": "Desi Ghee",
+              "priceDelta": 10
+            }
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "key": "vrat",
+      "title": "Vrat Special",
+      "icon": "\ud83d\udd49\ufe0f",
+      "colorClass": "purple",
+      "items": [
+        {
+          "id": "vs1",
+          "name": "Sabudana Vada (4 pcs)",
+          "desc": "Crispy sabudana patties",
+          "price": 149,
+          "variants": [
+            {
+              "id": "nonspicy",
+              "label": "Non Spicy",
+              "priceDelta": 0
+            },
+            {
+              "id": "spicy",
+              "label": "Spicy",
+              "priceDelta": 20
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": "vs2",
+          "name": "Sabudana Khichdi",
+          "desc": "Light, tasty & vrat-friendly",
+          "price": 129,
+          "variants": [
+            {
+              "id": "nonspicy",
+              "label": "Non Spicy",
+              "priceDelta": 0
+            },
+            {
+              "id": "spicy",
+              "label": "Spicy",
+              "priceDelta": 20
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": "vs3",
+          "name": "Vrat Thali",
+          "desc": "Complete vrat meal",
+          "price": 249,
+          "variants": [
+            {
+              "id": "dry",
+              "label": "Dry Potato",
+              "priceDelta": 0
+            },
+            {
+              "id": "gravy",
+              "label": "Gravy Potato",
+              "priceDelta": 40
+            }
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "key": "snacks",
+      "title": "Evening Snacks",
+      "icon": "\u2615",
+      "colorClass": "green",
+      "items": [
+        {
+          "id": "es1",
+          "name": "Pyazi Pakora (10 pcs)",
+          "desc": "Crispy onion fritters",
+          "price": 109,
+          "available": true
+        },
+        {
+          "id": "es2",
+          "name": "Aloo Pakora (10 pcs)",
+          "desc": "Crispy potato fritters",
+          "price": 109,
+          "available": true
+        },
+        {
+          "id": "es3",
+          "name": "Bhelpuri (Serves 2)",
+          "desc": "Tossed puffed rice with veggies & chutneys",
+          "price": 109,
+          "available": true
+        }
+      ]
+    },
+    {
+      "key": "breakfast",
+      "title": "Breakfast Special",
+      "icon": "\ud83c\udf05",
+      "colorClass": "orange",
+      "items": [
+        {
+          "id": "bf1",
+          "name": "Masala Poha (Serves 2)",
+          "desc": "Light, tasty & wholesome",
+          "price": 129,
+          "available": true
+        },
+        {
+          "id": "bf2",
+          "name": "Suji Upma (Serves 2)",
+          "desc": "Healthy & satisfying",
+          "price": 149,
+          "available": true
+        }
+      ]
+    },
+    {
+      "key": "addons",
+      "title": "Add-ons",
+      "icon": "\ud83c\udf6f",
+      "colorClass": "yellow",
+      "items": [
+        {
+          "id": "ao1",
+          "name": "Green Chutney",
+          "desc": "Fresh mint & coriander chutney",
+          "price": 10,
+          "available": true
+        },
+        {
+          "id": "ao2",
+          "name": "Cold Drink (300ml)",
+          "desc": "Chilled soft drink",
+          "price": 28,
+          "available": true
+        },
+        {
+          "id": "ao3",
+          "name": "Masala Chaach",
+          "desc": "Spiced buttermilk",
+          "price": 25,
+          "available": true
+        },
+        {
+          "id": "ao4",
+          "name": "Mint Masala Chaach",
+          "desc": "Spiced buttermilk with mint",
+          "price": 30,
+          "available": true
+        },
+        {
+          "id": "ao5",
+          "name": "Boondi Masala Chaach",
+          "desc": "Spiced buttermilk with boondi",
+          "price": 30,
+          "available": true
+        }
+      ]
+    }
+  ]
+}
