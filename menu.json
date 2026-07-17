@@ -327,6 +327,27 @@
           "desc": "Spiced buttermilk with boondi",
           "price": 30,
           "available": true
+        },
+        {
+          "id": "ao6",
+          "name": "Curd (200gm)",
+          "desc": "Fresh homemade curd",
+          "price": 25,
+          "available": true
+        },
+        {
+          "id": "ao7",
+          "name": "Home Made Mango Pickle 1",
+          "desc": "Traditional homemade mango pickle",
+          "price": 5,
+          "available": true
+        },
+        {
+          "id": "ao8",
+          "name": "Home Made Mango Pickle 2",
+          "desc": "Traditional homemade mango pickle",
+          "price": 8,
+          "available": true
         }
       ]
     }
