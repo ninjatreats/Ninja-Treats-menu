@@ -184,7 +184,7 @@
             {
               "id": "spicy",
               "label": "Spicy",
-              "priceDelta": 20
+              "priceDelta": 0
             }
           ],
           "available": true
@@ -203,7 +203,7 @@
             {
               "id": "spicy",
               "label": "Spicy",
-              "priceDelta": 20
+              "priceDelta": 0
             }
           ],
           "available": true
