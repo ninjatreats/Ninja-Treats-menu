@@ -38,7 +38,7 @@
     const variantHtml = it.variants
       ? `<select class="variant-select" data-role="variant" data-id="${it.id}" ${isAvailable ? '' : 'disabled'}>
           ${it.variants.map(v => {
-            const priceText = v.priceDelta ? ` (+₹${v.priceDelta})` : ' (Free)';
+            const priceText = v.priceDelta ? ` (+₹${v.priceDelta})` : '';
             return `<option value="${v.id}">${v.label}${priceText}</option>`;
           }).join('')}
         </select>`
