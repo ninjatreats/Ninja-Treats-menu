@@ -110,15 +110,20 @@
   .qty-btn:disabled{color:#4a4f43;cursor:not-allowed;}
   .qty-val{width:26px;text-align:center;font-size:13.5px;font-weight:700;}
 
+  .variant-group{display:none;margin-top:8px;}
+  .item.checked .variant-group{display:block;}
+  .variant-group-label{
+    font-size:10.5px;font-weight:700;color:var(--muted);
+    text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px;
+  }
   .variant-select{
-    display:none;margin-top:8px;width:100%;
+    width:100%;
     background:#0f120e;border:1px solid var(--line);border-radius:9px;
     color:var(--white);font-size:13px;font-family:'Inter';font-weight:600;
     padding:9px 10px;-webkit-appearance:none;appearance:none;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0L5 6L10 0Z' fill='%23f2b705'/></svg>");
     background-repeat:no-repeat;background-position:right 12px center;
   }
-  .item.checked .variant-select{display:block;}
   .variant-select:focus{outline:none;border-color:var(--gold-dim);}
 
   .addon-item{

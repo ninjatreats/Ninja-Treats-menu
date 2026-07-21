@@ -19,91 +19,115 @@
           "name": "Masala Aloo Stuffed Sandwich (4 pcs)",
           "desc": "Crispy, spicy & tasty",
           "price": 119,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "butter",
-              "label": "Butter",
-              "priceDelta": 0
-            },
-            {
-              "id": "ghee",
-              "label": "Desi Ghee",
-              "priceDelta": 20
+              "id": "opt",
+              "label": "Preparation",
+              "options": [
+                {
+                  "id": "butter",
+                  "label": "Butter",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "ghee",
+                  "label": "Desi Ghee",
+                  "priceDelta": 20
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "bs2",
           "name": "Paneer Paratha (1 pc)",
           "desc": "Freshly grated paneer stuffed paratha",
           "price": 99,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "oil",
-              "label": "Refined Oil",
-              "priceDelta": 0
-            },
-            {
-              "id": "butter",
-              "label": "Butter",
-              "priceDelta": 5
-            },
-            {
-              "id": "ghee",
-              "label": "Desi Ghee",
-              "priceDelta": 15
+              "id": "opt",
+              "label": "Preparation",
+              "options": [
+                {
+                  "id": "oil",
+                  "label": "Refined Oil",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "butter",
+                  "label": "Butter",
+                  "priceDelta": 5
+                },
+                {
+                  "id": "ghee",
+                  "label": "Desi Ghee",
+                  "priceDelta": 15
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "bs3",
           "name": "Aloo Paratha (1 pc)",
           "desc": "Spiced aloo stuffed paratha",
           "price": 59,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "oil",
-              "label": "Refined Oil",
-              "priceDelta": 0
-            },
-            {
-              "id": "butter",
-              "label": "Butter",
-              "priceDelta": 5
-            },
-            {
-              "id": "ghee",
-              "label": "Desi Ghee",
-              "priceDelta": 15
+              "id": "opt",
+              "label": "Preparation",
+              "options": [
+                {
+                  "id": "oil",
+                  "label": "Refined Oil",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "butter",
+                  "label": "Butter",
+                  "priceDelta": 5
+                },
+                {
+                  "id": "ghee",
+                  "label": "Desi Ghee",
+                  "priceDelta": 15
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "bs4",
           "name": "Sattu Paratha (1 pc)",
           "desc": "High-protein roasted chana sattu stuffed paratha",
           "price": 79,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "oil",
-              "label": "Refined Oil",
-              "priceDelta": 0
-            },
-            {
-              "id": "butter",
-              "label": "Butter",
-              "priceDelta": 5
-            },
-            {
-              "id": "ghee",
-              "label": "Desi Ghee",
-              "priceDelta": 15
+              "id": "opt",
+              "label": "Preparation",
+              "options": [
+                {
+                  "id": "oil",
+                  "label": "Refined Oil",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "butter",
+                  "label": "Butter",
+                  "priceDelta": 5
+                },
+                {
+                  "id": "ghee",
+                  "label": "Desi Ghee",
+                  "priceDelta": 15
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "bs5",
@@ -121,46 +145,74 @@
         },
         {
           "id": "bs7",
-          "name": "Poori Sabji (4 pcs)",
+          "name": "Poori Sabji (5 pc)",
           "desc": "Fluffy pooris with your choice of sabji",
           "price": 129,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "dry",
-              "label": "Dry Aloo Jeera",
-              "priceDelta": 0
+              "id": "sabji",
+              "label": "Sabji Type",
+              "options": [
+                {
+                  "id": "dry",
+                  "label": "Dry Aloo Jeera",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "gravy",
+                  "label": "Gravy Aloo Tamatar",
+                  "priceDelta": 49
+                }
+              ]
             },
             {
-              "id": "gravy",
-              "label": "Gravy Aloo Tamatar",
-              "priceDelta": 49
+              "id": "poori",
+              "label": "Poori Type",
+              "options": [
+                {
+                  "id": "refined",
+                  "label": "Refined",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "ghee",
+                  "label": "Desi Ghee",
+                  "priceDelta": 25
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "bs8",
           "name": "Roti (1 pc)",
           "desc": "Soft tandoori roti",
           "price": 15,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "plain",
-              "label": "Plain",
-              "priceDelta": 0
-            },
-            {
-              "id": "butter",
-              "label": "Butter",
-              "priceDelta": 5
-            },
-            {
-              "id": "ghee",
-              "label": "Desi Ghee",
-              "priceDelta": 10
+              "id": "opt",
+              "label": "Preparation",
+              "options": [
+                {
+                  "id": "plain",
+                  "label": "Plain",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "butter",
+                  "label": "Butter",
+                  "priceDelta": 5
+                },
+                {
+                  "id": "ghee",
+                  "label": "Desi Ghee",
+                  "priceDelta": 10
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         }
       ]
     },
@@ -175,57 +227,75 @@
           "name": "Sabudana Vada (4 pcs)",
           "desc": "Crispy sabudana patties",
           "price": 149,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "nonspicy",
-              "label": "Non Spicy",
-              "priceDelta": 0
-            },
-            {
-              "id": "spicy",
-              "label": "Spicy",
-              "priceDelta": 0
+              "id": "opt",
+              "label": "Spice Level",
+              "options": [
+                {
+                  "id": "nonspicy",
+                  "label": "Non Spicy",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "spicy",
+                  "label": "Spicy",
+                  "priceDelta": 0
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "vs2",
           "name": "Sabudana Khichdi",
           "desc": "Light, tasty & vrat-friendly",
           "price": 129,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "nonspicy",
-              "label": "Non Spicy",
-              "priceDelta": 0
-            },
-            {
-              "id": "spicy",
-              "label": "Spicy",
-              "priceDelta": 0
+              "id": "opt",
+              "label": "Spice Level",
+              "options": [
+                {
+                  "id": "nonspicy",
+                  "label": "Non Spicy",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "spicy",
+                  "label": "Spicy",
+                  "priceDelta": 0
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "vs3",
           "name": "Small Vrat Thali",
           "desc": "4 kuttu poori, roasted makhana peanut with dry aloo jeera sabji or gravy aloo tamatar sabji",
           "price": 199,
-          "variants": [
+          "available": true,
+          "variantGroups": [
             {
-              "id": "dry",
-              "label": "Dry Aloo Jeera",
-              "priceDelta": 0
-            },
-            {
-              "id": "gravy",
-              "label": "Gravy Aloo Tamatar",
-              "priceDelta": 40
+              "id": "opt",
+              "label": "Sabji Type",
+              "options": [
+                {
+                  "id": "dry",
+                  "label": "Dry Aloo Jeera",
+                  "priceDelta": 0
+                },
+                {
+                  "id": "gravy",
+                  "label": "Gravy Aloo Tamatar",
+                  "priceDelta": 40
+                }
+              ]
             }
-          ],
-          "available": true
+          ]
         },
         {
           "id": "vs4",
@@ -337,16 +407,9 @@
         },
         {
           "id": "ao7",
-          "name": "Home Made Mango Pickle 1",
-          "desc": "Traditional homemade mango pickle",
-          "price": 5,
-          "available": true
-        },
-        {
-          "id": "ao8",
-          "name": "Home Made Mango Pickle 2",
-          "desc": "Traditional homemade mango pickle",
-          "price": 8,
+          "name": "Pickle",
+          "desc": "Homemade mango pickle",
+          "price": 3,
           "available": true
         }
       ]

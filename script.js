@@ -35,13 +35,17 @@
 
   function renderItem(it){
     const isAvailable = it.available !== false; // menu.json can mark an item "available": false to 86 it
-    const variantHtml = it.variants
-      ? `<select class="variant-select" data-role="variant" data-id="${it.id}" ${isAvailable ? '' : 'disabled'}>
-          ${it.variants.map(v => {
-            const priceText = v.priceDelta ? ` (+₹${v.priceDelta})` : '';
-            return `<option value="${v.id}">${v.label}${priceText}</option>`;
-          }).join('')}
-        </select>`
+    const variantHtml = it.variantGroups
+      ? it.variantGroups.map(group => `
+        <div class="variant-group">
+          <div class="variant-group-label">${group.label}</div>
+          <select class="variant-select" data-role="variant" data-id="${it.id}" data-group="${group.id}" ${isAvailable ? '' : 'disabled'}>
+            ${group.options.map(opt => {
+              const priceText = opt.priceDelta ? ` (+₹${opt.priceDelta})` : '';
+              return `<option value="${opt.id}">${opt.label}${priceText}</option>`;
+            }).join('')}
+          </select>
+        </div>`).join('')
       : '';
     const soldOutBadge = isAvailable ? '' : '<span class="sold-out-badge">Sold Out</span>';
     return `<div class="item${isAvailable ? '' : ' unavailable'}" data-id="${it.id}">
@@ -68,14 +72,19 @@
   let PRODUCTS_BY_ID = {};
 
   function getUnitPrice(it){
-    if(it.variants){
-      const chosen = it.variants.find(v => v.id === variantState[it.id]) || it.variants[0];
-      return it.price + (chosen.priceDelta || 0);
+    if(it.variantGroups){
+      let total = it.price;
+      it.variantGroups.forEach(group => {
+        const selectedId = (variantState[it.id] || {})[group.id];
+        const chosen = group.options.find(o => o.id === selectedId) || group.options[0];
+        total += (chosen.priceDelta || 0);
+      });
+      return total;
     }
     return it.price;
   }
 
-  const variantState = {}; // itemId -> selected variant id
+  const variantState = {}; // itemId -> { groupId: selectedOptionId }
 
   function toggleItem(id){
     const product = PRODUCTS_BY_ID[id];
@@ -85,8 +94,11 @@
       delete variantState[id];
     } else {
       state[id] = 1;
-      if(product && product.variants){
-        variantState[id] = product.variants[0].id;
+      if(product && product.variantGroups){
+        variantState[id] = {};
+        product.variantGroups.forEach(group => {
+          variantState[id][group.id] = group.options[0].id;
+        });
       }
     }
     renderState();
@@ -98,8 +110,9 @@
     renderState();
   }
 
-  function setVariant(id, variantId){
-    variantState[id] = variantId;
+  function setVariant(id, groupId, optionId){
+    if(!variantState[id]) variantState[id] = {};
+    variantState[id][groupId] = optionId;
   }
 
   function renderState(){
@@ -126,7 +139,9 @@
     });
     document.querySelectorAll('[data-role="variant"]').forEach(el=>{
       const id = el.getAttribute('data-id');
-      if(variantState[id]) el.value = variantState[id];
+      const groupId = el.getAttribute('data-group');
+      const selected = (variantState[id] || {})[groupId];
+      if(selected) el.value = selected;
     });
     document.querySelectorAll('[data-role="unitPrice"]').forEach(el=>{
       const id = el.getAttribute('data-id');
@@ -334,9 +349,13 @@
           const lineTotal = unitPrice * qty;
           subtotal += lineTotal;
           let variantLabel = '';
-          if(it.variants){
-            const chosen = it.variants.find(v => v.id === variantState[it.id]) || it.variants[0];
-            variantLabel = ` [${chosen.label}]`;
+          if(it.variantGroups){
+            const chosenLabels = it.variantGroups.map(group => {
+              const selectedId = (variantState[it.id] || {})[group.id];
+              const chosen = group.options.find(o => o.id === selectedId) || group.options[0];
+              return chosen.label;
+            });
+            variantLabel = ` [${chosenLabels.join(', ')}]`;
           }
           lines.push(`• ${it.name}${variantLabel} x${qty} — ₹${lineTotal}`);
         }
@@ -408,7 +427,7 @@
   document.addEventListener('change', function(e){
     const variant = e.target.closest('[data-role="variant"]');
     if(variant){
-      setVariant(variant.getAttribute('data-id'), variant.value);
+      setVariant(variant.getAttribute('data-id'), variant.getAttribute('data-group'), variant.value);
       renderState();
     }
   });
