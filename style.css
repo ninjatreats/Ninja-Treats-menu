@@ -126,6 +126,28 @@
   }
   .variant-select:focus{outline:none;border-color:var(--gold-dim);}
 
+  .extras-group{display:none;margin-top:8px;}
+  .item.checked .extras-group{display:block;}
+  .extras-list{
+    background:#0f120e;border:1px solid var(--line);border-radius:9px;
+    overflow:hidden;
+  }
+  .extra-row{
+    display:flex;align-items:center;gap:9px;padding:9px 10px;
+    cursor:pointer;-webkit-tap-highlight-color:transparent;
+    border-bottom:1px solid var(--line);
+  }
+  .extra-row:last-child{border-bottom:none;}
+  .extra-row.selected{background:rgba(242,183,5,0.06);}
+  .chk-mini{
+    width:18px;height:18px;border-radius:5px;border:2px solid var(--line);
+    background:#12150f;display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-size:11px;color:transparent;transition:all .12s;
+  }
+  .chk-mini.on{background:var(--gold);border-color:var(--gold);color:#171400;}
+  .extra-name{flex:1;font-size:13px;font-weight:600;color:#dcdfd7;}
+  .extra-price{font-size:12px;font-weight:700;color:var(--gold);}
+
   .addon-item{
     display:flex;align-items:center;justify-content:space-between;
     background:var(--panel);border:1px solid var(--line);

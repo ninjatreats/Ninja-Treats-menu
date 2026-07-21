@@ -67,6 +67,23 @@
                 }
               ]
             }
+          ],
+          "extraAddOns": [
+            {
+              "id": "pickle",
+              "label": "Pickle",
+              "price": 5
+            },
+            {
+              "id": "chutney",
+              "label": "Green Chutney",
+              "price": 10
+            },
+            {
+              "id": "curd",
+              "label": "Curd",
+              "price": 25
+            }
           ]
         },
         {
@@ -97,6 +114,23 @@
                 }
               ]
             }
+          ],
+          "extraAddOns": [
+            {
+              "id": "pickle",
+              "label": "Pickle",
+              "price": 5
+            },
+            {
+              "id": "chutney",
+              "label": "Green Chutney",
+              "price": 10
+            },
+            {
+              "id": "curd",
+              "label": "Curd",
+              "price": 25
+            }
           ]
         },
         {
@@ -126,6 +160,23 @@
                   "priceDelta": 15
                 }
               ]
+            }
+          ],
+          "extraAddOns": [
+            {
+              "id": "pickle",
+              "label": "Pickle",
+              "price": 5
+            },
+            {
+              "id": "chutney",
+              "label": "Green Chutney",
+              "price": 10
+            },
+            {
+              "id": "curd",
+              "label": "Curd",
+              "price": 25
             }
           ]
         },

@@ -47,6 +47,19 @@
           </select>
         </div>`).join('')
       : '';
+    const extrasHtml = it.extraAddOns
+      ? `<div class="extras-group">
+          <div class="variant-group-label">Add-ons (optional, pick any)</div>
+          <div class="extras-list">
+            ${it.extraAddOns.map(ex => `
+              <div class="extra-row" data-role="extraRow" data-id="${it.id}" data-extra="${ex.id}">
+                <div class="chk-mini" data-role="extraChk">✓</div>
+                <span class="extra-name">${ex.label}</span>
+                <span class="extra-price">+₹${ex.price}</span>
+              </div>`).join('')}
+          </div>
+        </div>`
+      : '';
     const soldOutBadge = isAvailable ? '' : '<span class="sold-out-badge">Sold Out</span>';
     return `<div class="item${isAvailable ? '' : ' unavailable'}" data-id="${it.id}">
       <div class="chk-wrap"><div class="chk" data-role="chk" data-id="${it.id}">✓</div></div>
@@ -55,6 +68,7 @@
         <div class="item-desc">${it.desc}</div>
         <div class="item-price" data-role="unitPrice" data-id="${it.id}">₹${it.price}</div>
         ${variantHtml}
+        ${extrasHtml}
         <div class="qty-stepper">
           <button class="qty-btn" data-role="dec" data-id="${it.id}">−</button>
           <span class="qty-val" data-role="qty" data-id="${it.id}">1</span>
@@ -72,19 +86,32 @@
   let PRODUCTS_BY_ID = {};
 
   function getUnitPrice(it){
+    let total = it.price;
     if(it.variantGroups){
-      let total = it.price;
       it.variantGroups.forEach(group => {
         const selectedId = (variantState[it.id] || {})[group.id];
         const chosen = group.options.find(o => o.id === selectedId) || group.options[0];
         total += (chosen.priceDelta || 0);
       });
-      return total;
     }
-    return it.price;
+    if(it.extraAddOns){
+      const selectedExtras = extrasState[it.id] || {};
+      it.extraAddOns.forEach(ex => {
+        if(selectedExtras[ex.id]) total += ex.price;
+      });
+    }
+    return total;
   }
 
   const variantState = {}; // itemId -> { groupId: selectedOptionId }
+  const extrasState = {}; // itemId -> { extraId: true } for each selected extra
+
+  function toggleExtra(id, extraId){
+    if(!state[id]) return; // item must be in the cart first
+    if(!extrasState[id]) extrasState[id] = {};
+    extrasState[id][extraId] = !extrasState[id][extraId];
+    renderState();
+  }
 
   function toggleItem(id){
     const product = PRODUCTS_BY_ID[id];
@@ -92,6 +119,7 @@
     if(state[id]){
       delete state[id];
       delete variantState[id];
+      delete extrasState[id];
     } else {
       state[id] = 1;
       if(product && product.variantGroups){
@@ -142,6 +170,14 @@
       const groupId = el.getAttribute('data-group');
       const selected = (variantState[id] || {})[groupId];
       if(selected) el.value = selected;
+    });
+    document.querySelectorAll('[data-role="extraRow"]').forEach(el=>{
+      const id = el.getAttribute('data-id');
+      const extraId = el.getAttribute('data-extra');
+      const isOn = !!((extrasState[id] || {})[extraId]);
+      el.classList.toggle('selected', isOn);
+      const chk = el.querySelector('[data-role="extraChk"]');
+      if(chk) chk.classList.toggle('on', isOn);
     });
     document.querySelectorAll('[data-role="unitPrice"]').forEach(el=>{
       const id = el.getAttribute('data-id');
@@ -357,7 +393,13 @@
             });
             variantLabel = ` [${chosenLabels.join(', ')}]`;
           }
-          lines.push(`• ${it.name}${variantLabel} x${qty} — ₹${lineTotal}`);
+          let extrasLabel = '';
+          if(it.extraAddOns){
+            const selectedExtras = extrasState[it.id] || {};
+            const chosenExtras = it.extraAddOns.filter(ex => selectedExtras[ex.id]).map(ex => ex.label);
+            if(chosenExtras.length) extrasLabel = ` + ${chosenExtras.join(', ')}`;
+          }
+          lines.push(`• ${it.name}${variantLabel}${extrasLabel} x${qty} — ₹${lineTotal}`);
         }
       });
     });
@@ -419,6 +461,9 @@
 
     if(e.target.closest('.qty-stepper')) return;
     if(e.target.closest('.variant-select')) return;
+
+    const extraRow = e.target.closest('[data-role="extraRow"]');
+    if(extraRow){ toggleExtra(extraRow.getAttribute('data-id'), extraRow.getAttribute('data-extra')); return; }
 
     const row = e.target.closest('.item, .addon-item');
     if(row){ toggleItem(row.getAttribute('data-id')); return; }
@@ -542,6 +587,7 @@
   function clearCart(){
     Object.keys(state).forEach(id => delete state[id]);
     Object.keys(variantState).forEach(id => delete variantState[id]);
+    Object.keys(extrasState).forEach(id => delete extrasState[id]);
     renderState();
   }
 
